@@ -15,4 +15,11 @@ launchctl load -w ~/Library/LaunchAgents/scrolling_launcher.plist
 ```
 After that, the python script should be run automatically at startup and scrolling with the mouse should be possible while the middle mouse button (the one at the back) is pressed.
 
+If the script does not work automatically, check if both your python version and your terminal are enabled in `System Preferences > Security & Privacy > Privacy > Accessibility` and in `System Preferences > Security & Privacy > Privacy > Input Monitoring`. Then open the terminal again and run
+
+```zsh
+launchctl unload -w ~/Library/LaunchAgents/scrolling_launcher.plist
+launchctl load -w ~/Library/LaunchAgents/scrolling_launcher.plist
+```
+
 A WORD OF WARNING: THIS PROGRAM WORKS WITH TOOLS THAT CAN MONITOR AND CONTROL YOUR KEYBOARD AND MOUSE. THIS IS A VERY SIMPLE PROGRAM THAT JUST EMULATES A SCROLLWHEEL IF THE MIDDLE MOUSE BUTTUN IS PRESSED AND THE MOUSE IS MOVED AT THE SAME TIME. YOU SHOULD HOWEVER BE CAREFUL WHAT YOU RUN ON YOUR SYSTEM, ESPECIALLY IF IT CAN MONITOR AND CONTROLL ALL YOUR KEYBOARD AND MOUSE INPUTS.
